@@ -1,3 +1,6 @@
 export const Routes = Object.freeze({
-  home: "/home",
+  home: { name: "home", path: "/home" },
+  bookmark: { name: "bookmark", path: "/bookmark" },
+  profile: { name: "profile", path: "/profile" },
+  create: { name: "create", path: "/create" },
 });

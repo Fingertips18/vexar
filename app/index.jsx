@@ -9,7 +9,10 @@ export default function App() {
     <View className="flex-1 items-center justify-center bg-white">
       <Text className="text-2xl font-poppins-black">Vexa</Text>
       <StatusBar style="auto" />
-      <Link href={Routes.home} className="text-blue-400 font-poppins-medium">
+      <Link
+        href={Routes.home.path}
+        className="text-blue-400 font-poppins-medium"
+      >
         Go to Home
       </Link>
     </View>
