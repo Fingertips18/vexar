@@ -4,11 +4,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        /* Light */
         background: "#F9F1F4",
         foreground: "#0A0607",
         primary: "#B46475",
         secondary: "#D39CA8",
         accent: "#C77A89",
+
+        /* Dark */
+        "dark-background": "#0E0609",
+        "dark-foreground": "#F9F5F6",
+        "dark-primary": "#9B4B5C",
+        "dark-secondary": "#632C38",
+        "dark-accent": "#853847",
       },
       fontFamily: {
         "poppins-thin": ["Poppins-Thin", "sans-serif"],
