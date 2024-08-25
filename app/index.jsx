@@ -1,5 +1,7 @@
-import { Image, SafeAreaView, ScrollView, View, Text } from "react-native";
-import { Redirect, router } from "expo-router";
+import { Image, ScrollView, View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
+import { router } from "expo-router";
 
 import { CustomButton } from "../components/custom-button";
 import { images, colors, Routes } from "../constants";
@@ -21,13 +23,13 @@ export default function App() {
 
           <View className="items-center space-y-2">
             <Text
-              className="font-bold text-2xl text-center max-w-[224px] mt-2"
+              className="font-bold text-2xl text-center max-w-[224px] mt-2 text-foreground"
               style={{ lineHeight: "24px" }}
             >
               Unleash Infinite Potential with
               <Text className="text-primary"> Vexar</Text>
             </Text>
-            <Text className="text-center text-xs">
+            <Text className="text-center text-xs text-foreground">
               Discover a new level of convenience with our app. Streamline your
               tasks, enhance your productivity, and enjoy a seamless
               experience—all in one place.
@@ -41,6 +43,8 @@ export default function App() {
           />
         </View>
       </ScrollView>
+
+      <StatusBar backgroundColor={colors.backgroundColor} style="dark" />
     </SafeAreaView>
   );
 }
