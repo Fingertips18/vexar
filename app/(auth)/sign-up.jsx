@@ -1,8 +1,10 @@
+import { Alert, Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Image, ScrollView, Text, View } from "react-native";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 
+import { useGlobalContext } from "../../lib/context/global-provider";
+import { UserService } from "../../lib/services/user-service";
 import { CustomButton } from "../../components/custom-button";
 import { TextField } from "./_components/text-field";
 import { images, Routes } from "../../constants";
@@ -14,8 +16,32 @@ export default function SignUp() {
     password: "",
   });
   const [loading, setLoading] = useState(false);
+  const { setUser, setIsSignedIn } = useGlobalContext();
 
-  const onSubmit = () => {};
+  const onSubmit = async () => {
+    if (!form.username || !form.email || !form.password) {
+      Alert.alert("Error", "Please fill out all of the required fields!");
+    }
+
+    setLoading(true);
+
+    try {
+      const result = await UserService.createUser({
+        username: form.username,
+        email: form.email,
+        password: form.password,
+      });
+
+      setIsSignedIn(true);
+      setUser(result);
+
+      router.replace(Routes.home.path);
+    } catch (e) {
+      Alert.alert("Error", e.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-background h-full">

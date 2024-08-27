@@ -1,12 +1,19 @@
 import { Image, ScrollView, View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import { router } from "expo-router";
+import { Redirect, router } from "expo-router";
 
+import { useGlobalContext } from "../lib/context/global-provider";
 import { CustomButton } from "../components/custom-button";
 import { images, colors, Routes } from "../constants";
 
 export default function App() {
+  const { isLoading, isSignedIn } = useGlobalContext();
+
+  if (!isLoading && isSignedIn) {
+    return <Redirect href={Routes.home.path} />;
+  }
+
   return (
     <SafeAreaView className="bg-background h-full">
       <ScrollView
