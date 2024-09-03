@@ -8,6 +8,9 @@ import createFill from "../assets/icons/create-fill.png";
 import create from "../assets/icons/create.png";
 import eyeOpen from "../assets/icons/eye-open.png";
 import eyeClose from "../assets/icons/eye-close.png";
+import search from "../assets/icons/search.png";
+import menu from "../assets/icons/menu.png";
+import play from "../assets/icons/play.png";
 
 export default {
   home,
@@ -20,4 +23,7 @@ export default {
   createFill,
   eyeOpen,
   eyeClose,
+  search,
+  menu,
+  play,
 };

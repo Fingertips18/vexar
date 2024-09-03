@@ -17,6 +17,8 @@ module.exports = {
         "dark-primary": "#9B4B5C",
         "dark-secondary": "#632C38",
         "dark-accent": "#853847",
+
+        muted: "#A29090",
       },
       fontFamily: {
         "poppins-thin": ["Poppins-Thin", "sans-serif"],

@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, router } from "expo-router";
 import { useState } from "react";
 
-import { useGlobalContext } from "../../lib/context/global-provider";
+import { useGlobalContext } from "../../lib/contexts/global-provider";
 import { UserService } from "../../lib/services/user-service";
 import { CustomButton } from "../../components/custom-button";
 import { TextField } from "./_components/text-field";

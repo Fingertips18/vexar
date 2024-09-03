@@ -10,6 +10,8 @@ const darkPrimaryColor = "#9B4B5C";
 const darkSecondaryColor = "#632C38";
 const darkAccentColor = "#853847";
 
+const mutedColor = "#A29090";
+
 export default {
   backgroundColor,
   foregroundColor,
@@ -22,4 +24,6 @@ export default {
   darkPrimaryColor,
   darkSecondaryColor,
   darkAccentColor,
+
+  mutedColor,
 };

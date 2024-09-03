@@ -1,7 +1,7 @@
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import { useState } from "react";
 
 import { colors, icons } from "../../../constants";
-import { useState } from "react";
 
 export function TextField({
   label,
@@ -23,12 +23,13 @@ export function TextField({
 
       <View className="flex-row items-center w-full h-16 px-4 bg-secondary/10 rounded-full border border-secondary/20 focus:border-secondary">
         <TextInput
-          className="flex-1 text-foreground font-semibold text-base"
+          className="flex-1 text-foreground font-medium text-base"
           value={value}
           placeholder={placeholder}
-          placeholderTextColor={colors.foregroundColor}
+          placeholderTextColor={colors.mutedColor}
           onChangeText={handleChangeText}
           secureTextEntry={isPassword && !obscure}
+          {...props}
         />
         {isPassword && (
           <TouchableOpacity onPress={() => setObscure(!obscure)}>
